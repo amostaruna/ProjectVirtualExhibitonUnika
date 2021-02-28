@@ -7,7 +7,7 @@ public class Poster : MonoBehaviour
 {
     //SerializedField Private GameObjects
     [Header("GameObjects")]
-    [SerializeField] private GameObject showPoster;
+    [SerializeField] private GameObject posterFull;
 
     //SerializedField Private Components
     [Header("Components")]
@@ -69,7 +69,7 @@ public class Poster : MonoBehaviour
     {
         Time.timeScale = 0;
         cekPoster = true;
-        showPoster.SetActive(true);
+        posterFull.SetActive(true);
         anim.SetBool("FadeIn", true);
     }
 
@@ -100,6 +100,6 @@ public class Poster : MonoBehaviour
         anim.SetBool("FadeIn", false);
         HiddenPoster();
         yield return new WaitForSeconds(1);
-        showPoster.SetActive(false);
+        posterFull.SetActive(false);
     }
 }
