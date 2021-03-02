@@ -19,6 +19,15 @@ public class Poster : MonoBehaviour
     //CekPoster digunakan untuk mengecek apakah Poster sudah tampil apa belum
     bool cekPoster;
 
+
+    private void Awake()
+    {
+        if(posterFull == null)
+        {
+            Debug.LogError("Poster Pada GameObject Dengan Nama" + gameObject.name + " Belum di tambahkan");
+        }
+    }
+
     void Start()
     {
         cekPoster = false;
@@ -99,7 +108,12 @@ public class Poster : MonoBehaviour
     {
         anim.SetBool("FadeIn", false);
         HiddenPoster();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         posterFull.SetActive(false);
+    }
+
+    public void ClosePoster()
+    {
+        StartCoroutine(AnimHiddenPoster());
     }
 }
