@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Poster
+  - Coin
+  - CoinRed
   layers:
   - Default
   - TransparentFX

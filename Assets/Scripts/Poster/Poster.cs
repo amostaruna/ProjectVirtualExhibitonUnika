@@ -8,6 +8,7 @@ public class Poster : MonoBehaviour
     //SerializedField Private GameObjects
     [Header("GameObjects")]
     [SerializeField] private GameObject posterFull;
+    [SerializeField] private GameObject coin;
 
     //SerializedField Private Components
     [Header("Components")]
@@ -18,7 +19,6 @@ public class Poster : MonoBehaviour
     bool cekButton;
     //CekPoster digunakan untuk mengecek apakah Poster sudah tampil apa belum
     bool cekPoster;
-
 
     private void Awake()
     {
@@ -32,9 +32,10 @@ public class Poster : MonoBehaviour
     {
         cekPoster = false;
         cekButton = false;
-
         HiddenText();
         HiddenPoster();
+
+        coin.SetActive(false);
 
     }
 
@@ -110,10 +111,17 @@ public class Poster : MonoBehaviour
         HiddenPoster();
         yield return new WaitForSeconds(1);
         posterFull.SetActive(false);
+        ShowCoin();
     }
 
     public void ClosePoster()
     {
         StartCoroutine(AnimHiddenPoster());
+    }
+
+    public void ShowCoin()
+    {
+        if(coin != null)
+            coin.SetActive(true);   
     }
 }

@@ -14,13 +14,17 @@ public class PlayerMovement : MonoBehaviour
     [Header("Property")]
     [SerializeField] private float moveSpeed = 5f;
 
-
     //Private Property
     private Vector2 movement;
-  
-  
+
+    private void Start()
+    {
+        Data.coin = 0;
+    }
+
     void Update()
     {
+        Debug.Log(Data.coin);
         InputMovement();
         InputAnimation();
     }
