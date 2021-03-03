@@ -108,7 +108,7 @@ public class Poster : MonoBehaviour
     {
         anim.SetBool("FadeIn", false);
         HiddenPoster();
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         posterFull.SetActive(false);
     }
 
