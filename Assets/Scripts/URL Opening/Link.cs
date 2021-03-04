@@ -6,9 +6,9 @@ public class Link : MonoBehaviour
 	public void OpenYoutubeVideo()
 	{
 
-	#if (!UNITY_EDITOR)
-		openWindow("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-	#endif
+#if (!UNITY_EDITOR)
+		openWindow("https://www.youtube.com/watch?v=hVRdKoxvruA");
+#endif
 
 	}
 	[DllImport("__Internal")]
