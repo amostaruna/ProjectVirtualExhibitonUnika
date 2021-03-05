@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Poster : MonoBehaviour
 {
     //SerializedField Private GameObjects
@@ -34,15 +35,15 @@ public class Poster : MonoBehaviour
         cekButton = false;
         HiddenText();
         HiddenPoster();
-
+       
         coin.SetActive(false);
-
     }
 
     private void Update()
     {
         if (Input.GetKey(KeyCode.E) && cekButton)
         {
+            PlayerPrefs.SetInt("GetCoin", 1);
             ShowPoster();
         }
 

@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        Data.coin = 0;
+        Data.coin = PlayerPrefs.GetInt("Coin", 0);
     }
 
     void Update()
