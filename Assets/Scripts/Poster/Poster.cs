@@ -16,6 +16,9 @@ public class Poster : MonoBehaviour
     [SerializeField]private Animator anim;
     [SerializeField] private Text textButton;
 
+    //mengecek apakah koin sudah diambil. 0 untuk blom, 1 untuk sudah
+    public static int coinAlreadyPicked = 0;
+
     //CekButton digunakan untuk mengecek apakah Text("Open Poster") sudah tampil apa belum
     bool cekButton;
     //CekPoster digunakan untuk mengecek apakah Poster sudah tampil apa belum
@@ -112,7 +115,10 @@ public class Poster : MonoBehaviour
         HiddenPoster();
         yield return new WaitForSeconds(1);
         posterFull.SetActive(false);
-        ShowCoin();
+        if(coinAlreadyPicked==0)
+        {
+            ShowCoin();
+        }
     }
 
     public void ClosePoster()
@@ -122,6 +128,7 @@ public class Poster : MonoBehaviour
 
     public void ShowCoin()
     {
+        coinAlreadyPicked = 1;
         if(coin != null)
             coin.SetActive(true);   
     }
