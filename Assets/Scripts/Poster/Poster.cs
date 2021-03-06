@@ -17,7 +17,7 @@ public class Poster : MonoBehaviour
     [SerializeField] private Text textButton;
 
     //mengecek apakah koin sudah diambil. 0 untuk blom, 1 untuk sudah
-    public static int coinAlreadyPicked = 0;
+    int coinAlreadyPicked;
 
     //CekButton digunakan untuk mengecek apakah Text("Open Poster") sudah tampil apa belum
     bool cekButton;
@@ -40,10 +40,13 @@ public class Poster : MonoBehaviour
         HiddenPoster();
        
         coin.SetActive(false);
+
+        coinAlreadyPicked =  PlayerPrefs.GetInt(gameObject.name, 0);
     }
 
     private void Update()
     {
+        Debug.Log(gameObject.name +" key "+coinAlreadyPicked);
         if (Input.GetKey(KeyCode.E) && cekButton)
         {
             PlayerPrefs.SetInt("GetCoin", 1);
@@ -53,6 +56,11 @@ public class Poster : MonoBehaviour
         if(Input.GetKey(KeyCode.P) && cekPoster)
         {
             StartCoroutine(AnimHiddenPoster());
+        }
+
+        if (Input.GetKey(KeyCode.C))
+        {
+            PlayerPrefs.DeleteAll();
         }
     }
 
@@ -128,8 +136,8 @@ public class Poster : MonoBehaviour
 
     public void ShowCoin()
     {
-        coinAlreadyPicked = 1;
-        if(coin != null)
+        PlayerPrefs.SetInt(gameObject.name, 1);
+        if (coin != null)
             coin.SetActive(true);   
     }
 }
