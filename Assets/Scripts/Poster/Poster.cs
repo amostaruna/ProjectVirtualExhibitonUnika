@@ -40,7 +40,8 @@ public class Poster : MonoBehaviour
         HiddenPoster();
        
         coin.SetActive(false);
-
+        //PlayerPrefs.SetInt(gameObject.name, 0); //reset coin data, hapus "//", run game kemudian exit// tambahkan kem
+        //Data.coin = 0;
         coinAlreadyPicked =  PlayerPrefs.GetInt(gameObject.name, 0);
     }
 

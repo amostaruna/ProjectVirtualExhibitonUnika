@@ -15,6 +15,6 @@ public class UIPlayer : MonoBehaviour
 
     void Update()
     {
-        coinCounter.text = "Coin : " + Data.coin;
+        coinCounter.text = "Score : " + Data.coin;
     }
 }
