@@ -1,8 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 public class Door : MonoBehaviour
 {
 
@@ -11,9 +12,12 @@ public class Door : MonoBehaviour
 
     [SerializeField] private string scene;
 
+    [SerializeField] private Transform getCurrentPosPlayer;
+
     bool cekButton;
     private void Start()
     {
+        getCurrentPosPlayer = GameObject.FindWithTag("Player").GetComponent<Transform>();
         cekButton = false;
         HiddenText();
 
@@ -60,6 +64,10 @@ public class Door : MonoBehaviour
 
     IEnumerator PindahScene()
     {
+        var position = getCurrentPosPlayer.position;
+        PlayerPrefs.SetFloat(SceneManager.GetActiveScene().name+"X", position.x);
+        PlayerPrefs.SetFloat(SceneManager.GetActiveScene().name+"Y", position.y);
+        
         anim.SetBool("FadeIn", true);
         yield return new WaitForSeconds(1);
         anim.SetBool("FadeIn", false);
@@ -72,5 +80,13 @@ public class Door : MonoBehaviour
         anim.SetBool("FadeOut", true);
         yield return new WaitForSeconds(1);
         anim.SetBool("FadeOut", false);
+    }
+
+    private void OnApplicationFocus(bool hasFocus)
+    {
+        if (hasFocus)
+        {
+            PlayerPrefs.DeleteAll();       
+        }
     }
 }

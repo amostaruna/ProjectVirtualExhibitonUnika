@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -55,6 +56,18 @@ public class PlayerMovement : MonoBehaviour
             MainChar1.SetActive(false);
             MainChar2.SetActive(false);
             MainChar3.SetActive(false);
+        }
+
+        if (SceneManager.GetActiveScene().name == "Level 1")
+        {
+            transform.position = new Vector2(
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", -1.35f),
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", 0));
+        }else if (SceneManager.GetActiveScene().name == "Level 2")
+        {
+            transform.position = new Vector2(
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", -1f),
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", -6.5f));
         }
     }
 
