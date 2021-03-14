@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+
 public class Poster : MonoBehaviour
 {
     //SerializedField Private GameObjects
@@ -141,4 +139,5 @@ public class Poster : MonoBehaviour
         if (coin != null)
             coin.SetActive(true);   
     }
+    
 }

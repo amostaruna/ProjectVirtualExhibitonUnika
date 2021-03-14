@@ -6,15 +6,21 @@ using UnityEngine.UI;
 
 public class NPCDialogueTrigger : MonoBehaviour
 {
-    [Header("GameObjects")]
-    [SerializeField] public GameObject dialogueBox;
-    public DialogueTrigger DT;
+    [Header("GameObjects")] [SerializeField]
+    public GameObject dialogueBox;
 
-    [Header("Components")]
-    [SerializeField] private Text notificationText;
+    public DialogueTrigger DT;
+    [SerializeField] private GameObject emoticon;
+
+    [Header("Components")] [SerializeField]
+    private Text notificationText;
+
     public bool dialogueOpenedCheck;
     bool dialogueCheck;
     bool buttonCheck;
+
+    private float timer = 0;
+    private bool emoticonShow = false;
 
     private void Awake()
     {
@@ -23,25 +29,48 @@ public class NPCDialogueTrigger : MonoBehaviour
             Debug.Log("Dialogue box for character " + gameObject.name + " not yet included");
         }
     }
+
     // Start is called before the first frame update
     void Start()
     {
         dialogueCheck = false;
-        HideNotification(); 
+        HideNotification();
         HideDialogueBox();
     }
+
     private void Update()
     {
-            if (Input.GetKey(KeyCode.E) && buttonCheck&& dialogueOpenedCheck == false)
-            {
-                ShowDialogueBox();
-            }
+        if (Input.GetKey(KeyCode.E) && buttonCheck && dialogueOpenedCheck == false)
+        {
+            emoticon.SetActive(false);
+            ShowDialogueBox();
+        }
 
         if (Input.GetKey(KeyCode.P) && dialogueCheck)
         {
+            emoticon.SetActive(false);
             HideDialogueBox();
         }
+
+        if (!dialogueOpenedCheck)
+        {
+            timer += Time.deltaTime;
+
+            if (timer > 15 && !emoticonShow && !dialogueOpenedCheck)
+            {
+                emoticon.SetActive(true);
+                emoticonShow = true;
+                timer = 0;
+            }else if (timer > 2 && emoticonShow)
+            {
+                emoticon.SetActive(false);
+                emoticonShow = false;
+                timer = 0;
+            }
+        }
+        
     }
+
     private void HideNotification() //menonaktifkan notifikasi 
     {
         notificationText.enabled = false;
@@ -51,13 +80,15 @@ public class NPCDialogueTrigger : MonoBehaviour
     {
         notificationText.enabled = true;
     }
-    private void HideDialogueBox()  //menyembunyikan dialoguebox
+
+    private void HideDialogueBox() //menyembunyikan dialoguebox
     {
         dialogueCheck = false;
         dialogueOpenedCheck = false;
         dialogueBox.SetActive(false);
     }
-    private void ShowDialogueBox()  //menampilkan dialoguebox
+
+    private void ShowDialogueBox() //menampilkan dialoguebox
     {
         HideNotification();
         dialogueBox.SetActive(true);
@@ -72,6 +103,7 @@ public class NPCDialogueTrigger : MonoBehaviour
             //Muncul Pop Up notifikasi  
             buttonCheck = true;
             ShowNotification();
+            emoticon.SetActive(true);
         }
     }
 
