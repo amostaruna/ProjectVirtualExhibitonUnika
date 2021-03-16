@@ -1,22 +1,22 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NPCWalk : MonoBehaviour
 {
-    private bool left = false, right = true;
+    private bool right = true;
 
     private Animator animator;
+    private bool stop = false;
 
-    void Start()
+    private void Start()
     {
         animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (right && !left) 
+        if (right && !stop) 
         {
             animator.SetFloat("Horizontal", transform.position.x);
             transform.position = Vector2.MoveTowards(
@@ -25,7 +25,7 @@ public class NPCWalk : MonoBehaviour
                 1 * Time.deltaTime);
         }
 
-        else if (left && !right)
+        else if (!right && !stop)
         {
             animator.SetFloat("Horizontal", transform.position.x);
             transform.position = Vector2.MoveTowards(
@@ -36,13 +36,58 @@ public class NPCWalk : MonoBehaviour
 
         if (transform.position.x <= -12 && transform.position.x <= 0)
         {
-            right = true;
-            left = false;
+            StartCoroutine(RightMove());
         }
         else if (transform.position.x >= 4 && transform.position.y >= 5)
         {
-            right = false;
-            left = true;
+            StartCoroutine(LeftMove());
+        }
+
+        if (stop)
+        {
+            transform.position = Vector2.MoveTowards(
+                transform.position, 
+                new Vector2(-12, 0), 
+                0);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag.Equals("Player"))
+        {
+            print("Coollider");
+            stop = true;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag.Equals("Player"))
+        {
+            print("Coollider2");
+            stop = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag.Equals("Player"))
+        {
+            stop = false;
+        }
+    }
+
+    IEnumerator RightMove()
+    {
+        yield return new WaitForSeconds(2);
+        right = true;
+    }
+
+    IEnumerator LeftMove()
+    {
+        yield return new WaitForSeconds(2);
+        right = false;
+    }
+
 }

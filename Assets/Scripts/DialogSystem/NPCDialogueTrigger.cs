@@ -20,7 +20,7 @@ public class NPCDialogueTrigger : MonoBehaviour
     bool buttonCheck;
 
     private float timer = 0;
-    private bool emoticonShow = false;
+    private bool emoticonShow;
 
     private void Awake()
     {
@@ -33,6 +33,8 @@ public class NPCDialogueTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        emoticon.SetActive(false);
+        emoticonShow = false;
         dialogueCheck = false;
         HideNotification();
         HideDialogueBox();
@@ -61,7 +63,7 @@ public class NPCDialogueTrigger : MonoBehaviour
                 emoticon.SetActive(true);
                 emoticonShow = true;
                 timer = 0;
-            }else if (timer > 2 && emoticonShow)
+            }else if (timer > 5 && emoticonShow)
             {
                 emoticon.SetActive(false);
                 emoticonShow = false;
