@@ -130,6 +130,7 @@ public class Poster : MonoBehaviour
 
     public void ClosePoster()
     {
+        print("Close Poster");
         StartCoroutine(AnimHiddenPoster());
     }
 

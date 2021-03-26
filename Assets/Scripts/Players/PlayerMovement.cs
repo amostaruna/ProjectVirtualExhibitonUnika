@@ -66,8 +66,8 @@ public class PlayerMovement : MonoBehaviour
         }else if (SceneManager.GetActiveScene().name == "Level 2")
         {
             transform.position = new Vector2(
-                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", -1f),
-                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", -6.5f));
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", -17.6f),
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", 1f));
         }
     }
 
