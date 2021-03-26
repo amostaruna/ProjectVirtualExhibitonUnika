@@ -47,11 +47,23 @@ TagManager:
   - name: room
     uniqueID: 2195140655
     locked: 0
-  - name: objects
-    uniqueID: 1077465189
+  - name: objects at the back of player2
+    uniqueID: 4194246301
+    locked: 0
+  - name: objects at the back of player
+    uniqueID: 2921697265
+    locked: 0
+  - name: NPC
+    uniqueID: 4104137605
     locked: 0
   - name: player
     uniqueID: 2483847155
+    locked: 0
+  - name: objects at the front of player
+    uniqueID: 1077465189
+    locked: 0
+  - name: objects at the front of player 2
+    uniqueID: 2389418393
     locked: 0
   - name: coin
     uniqueID: 2976855027

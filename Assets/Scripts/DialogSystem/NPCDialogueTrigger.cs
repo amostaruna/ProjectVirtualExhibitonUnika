@@ -58,7 +58,7 @@ public class NPCDialogueTrigger : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            if (timer > 15 && !emoticonShow && !dialogueOpenedCheck)
+            if (timer > 7 && !emoticonShow && !dialogueOpenedCheck)
             {
                 emoticon.SetActive(true);
                 emoticonShow = true;

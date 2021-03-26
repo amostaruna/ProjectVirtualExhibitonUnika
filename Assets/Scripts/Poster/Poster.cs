@@ -120,7 +120,7 @@ public class Poster : MonoBehaviour
     {
         anim.SetBool("FadeIn", false);
         HiddenPoster();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds((float)0.5);
         posterFull.SetActive(false);
         if(coinAlreadyPicked==0)
         {
