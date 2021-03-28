@@ -8,17 +8,30 @@ public class NPCWalk : MonoBehaviour
     private Animator animator;
     private bool stop = false;
 
+
+    Vector3 lastPosition = Vector3.zero;
+    float speed;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
     }
 
+    void FixedUpdate()
+    {
+
+    }
+
     // Update is called once per frame
     private void Update()
     {
+        speed = (transform.position - lastPosition).magnitude;
+        lastPosition = transform.position;
+        Debug.Log("Speed = " + speed);
         if (right && !stop) 
         {
-            animator.SetFloat("Horizontal", transform.position.x);
+            animator.SetFloat("Horizontal", 1);
+            animator.SetFloat("Speed", speed);
             transform.position = Vector2.MoveTowards(
                 transform.position, 
                 new Vector2(4, 5), 
@@ -27,7 +40,8 @@ public class NPCWalk : MonoBehaviour
 
         else if (!right && !stop)
         {
-            animator.SetFloat("Horizontal", transform.position.x);
+            animator.SetFloat("Horizontal", -1);
+            animator.SetFloat("Speed", speed);
             transform.position = Vector2.MoveTowards(
                 transform.position, 
                 new Vector2(-12, 0), 
