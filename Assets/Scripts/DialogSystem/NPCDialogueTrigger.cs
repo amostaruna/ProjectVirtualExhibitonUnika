@@ -11,6 +11,7 @@ public class NPCDialogueTrigger : MonoBehaviour
 
     public DialogueTrigger DT;
     [SerializeField] private GameObject emoticon;
+    [SerializeField] private GameObject btnInteract;
 
     [Header("Components")] [SerializeField]
     private Text notificationText;
@@ -38,6 +39,8 @@ public class NPCDialogueTrigger : MonoBehaviour
         dialogueCheck = false;
         HideNotification();
         HideDialogueBox();
+        
+        btnInteract.SetActive(false);
     }
 
     private void Update()
@@ -106,6 +109,8 @@ public class NPCDialogueTrigger : MonoBehaviour
             buttonCheck = true;
             ShowNotification();
             emoticon.SetActive(true);
+            
+            btnInteract.SetActive(true);
         }
     }
 
@@ -117,6 +122,17 @@ public class NPCDialogueTrigger : MonoBehaviour
             //menonaktifkan notifikasi
             buttonCheck = false;
             HideNotification();
+            btnInteract.SetActive(false);
+        }
+    }
+
+    public void Interact()
+    {
+        if (buttonCheck)
+        {
+            emoticon.SetActive(false);
+            btnInteract.SetActive(false);
+            ShowDialogueBox();
         }
     }
 }

@@ -7,21 +7,24 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     //SerializeField Private Components
-    [Header("Components")]
-    [SerializeField] private Rigidbody2D rb;
+    [Header("Components")] [SerializeField]
+    private Rigidbody2D rb;
+
     [SerializeField] private Animator Char1Animator;
     [SerializeField] private Animator Char2Animator;
     [SerializeField] private Animator Char3Animator;
     [SerializeField] private Animator Char4Animator;
 
     //SerializedField Private Property
-    [Header("Property")]
-    [SerializeField] private float moveSpeed = 5f;
+    [Header("Property")] [SerializeField] private float moveSpeed = 5f;
 
     [SerializeField] private GameObject MainChar1;
     [SerializeField] private GameObject MainChar2;
     [SerializeField] private GameObject MainChar3;
     [SerializeField] private GameObject MainChar4;
+
+    //Joystick
+    [SerializeField] private Joystick _joystick;
 
     //Private Property
     private Vector2 movement;
@@ -63,7 +66,8 @@ public class PlayerMovement : MonoBehaviour
             transform.position = new Vector2(
                 PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", -11.95f),
                 PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", -2.32f));
-        }else if (SceneManager.GetActiveScene().name == "Level 2")
+        }
+        else if (SceneManager.GetActiveScene().name == "Level 2")
         {
             transform.position = new Vector2(
                 PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", -17.6f),
@@ -76,7 +80,6 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log(Data.coin);
         InputMovement();
         InputAnimation();
-
     }
 
     private void FixedUpdate()
@@ -89,18 +92,21 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        
+        movement.x = _joystick.Horizontal;
+        movement.y = _joystick.Vertical;
     }
 
     //Fungsi untuk memberikan animasi pada player
     void InputAnimation()
     {
-        if (Data.CharNum==1)
+        if (Data.CharNum == 1)
         {
             Char1Animator.SetFloat("Horizontal", movement.x);
             Char1Animator.SetFloat("Vertical", movement.y);
             Char1Animator.SetFloat("Speed", movement.sqrMagnitude);
         }
-        else if(Data.CharNum == 2)
+        else if (Data.CharNum == 2)
         {
             Char2Animator.SetFloat("Horizontal", movement.x);
             Char2Animator.SetFloat("Vertical", movement.y);
@@ -136,5 +142,4 @@ public class PlayerMovement : MonoBehaviour
             Debug.LogError("Komponen Rigidbody Belum DiTambahkan Ke Dalam Script");
         }
     }
-
 }

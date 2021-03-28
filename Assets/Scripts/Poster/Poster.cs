@@ -8,6 +8,7 @@ public class Poster : MonoBehaviour
     [Header("GameObjects")]
     [SerializeField] private GameObject posterFull;
     [SerializeField] private GameObject coin;
+    [SerializeField] private GameObject btnInteract;
 
     //SerializedField Private Components
     [Header("Components")]
@@ -41,6 +42,11 @@ public class Poster : MonoBehaviour
         //PlayerPrefs.SetInt(gameObject.name, 0); //reset coin data, hapus "//", run game kemudian exit// tambahkan kem
         //Data.coin = 0;
         coinAlreadyPicked =  PlayerPrefs.GetInt(gameObject.name, 0);
+
+        if (btnInteract != null)
+        {
+            btnInteract.SetActive(false);
+        }
     }
 
     private void Update()
@@ -70,6 +76,7 @@ public class Poster : MonoBehaviour
         {
             //Muncul Pop Up Button 
             ShowText();
+            btnInteract.SetActive(true);
             cekButton = true;
         }
     }
@@ -80,6 +87,7 @@ public class Poster : MonoBehaviour
         if (collision.gameObject.tag.Equals("Player"))
         {
             cekButton = false;
+            btnInteract.SetActive(false);
             //Hapus Pop Up Button
             HiddenText();
         }
@@ -139,6 +147,16 @@ public class Poster : MonoBehaviour
         PlayerPrefs.SetInt(gameObject.name, 1);
         if (coin != null)
             coin.SetActive(true);   
+    }
+    
+    public void Interact()
+    {
+        if (cekButton)
+        {
+            btnInteract.SetActive(false);
+            PlayerPrefs.SetInt("GetCoin", 1);
+            ShowPoster();
+        }
     }
     
 }
