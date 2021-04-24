@@ -14,7 +14,6 @@ public class Poster : MonoBehaviour
     [Header("Components")]
     [SerializeField]private Animator anim;
     [SerializeField] private Text textButton;
-
     //mengecek apakah koin sudah diambil. 0 untuk blom, 1 untuk sudah
     int coinAlreadyPicked;
 
@@ -158,5 +157,4 @@ public class Poster : MonoBehaviour
             ShowPoster();
         }
     }
-    
 }

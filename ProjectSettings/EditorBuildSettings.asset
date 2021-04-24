@@ -6,9 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
+    path: Assets/Scenes/Lobby.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Level 2.unity
+    path: Assets/Scenes/Main Room.unity
     guid: e779274879ca7614a9fb9df8c6424d4c
+  - enabled: 1
+    path: Assets/Scenes/Parametrik Room.unity
+    guid: 65f4d8ee9d868dc46b3de0eaaa33fde8
+  - enabled: 1
+    path: Assets/Scenes/Week'n Room.unity
+    guid: af62489307c17e343819708f58926ea5
+  - enabled: 1
+    path: Assets/Scenes/Hall of Fame Room.unity
+    guid: e4b04470152e22f4b9ebf31665cbf5ff
   m_configObjects: {}

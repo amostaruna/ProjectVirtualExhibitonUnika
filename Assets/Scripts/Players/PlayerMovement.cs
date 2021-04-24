@@ -61,17 +61,47 @@ public class PlayerMovement : MonoBehaviour
             MainChar3.SetActive(false);
         }
 
-        if (SceneManager.GetActiveScene().name == "Level 1")
+        if (SceneManager.GetActiveScene().name == "Lobby")
         {
             transform.position = new Vector2(
-                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", -11.95f),
-                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", -2.32f));
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", 113f),
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", 46f));
         }
-        else if (SceneManager.GetActiveScene().name == "Level 2")
+        else if (SceneManager.GetActiveScene().name == "Main Room")
         {
             transform.position = new Vector2(
-                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", -17.6f),
-                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", 1f));
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", -3f),
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", -5f));
+        }
+        else if (SceneManager.GetActiveScene().name == "Parametrik Room")
+        {
+            transform.position = new Vector2(
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", 0.2f),
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", -4f));
+        }
+        else if (SceneManager.GetActiveScene().name == "Week'n Room")
+        {
+            transform.position = new Vector2(
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", -25.2f),
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", 2.9f));
+        }
+        else if (SceneManager.GetActiveScene().name == "Hall of Fame Room")
+        {
+            transform.position = new Vector2(
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", -1f),
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", -1f));
+        }
+        else if (SceneManager.GetActiveScene().name == "AAE Room")
+        {
+            transform.position = new Vector2(
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", 1.14f),
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", 1.14f));
+        }
+        else if (SceneManager.GetActiveScene().name == "Seminar Room")
+        {
+            transform.position = new Vector2(
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", 1.14f),
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", 1.14f));
         }
     }
 
@@ -93,8 +123,8 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         
-        movement.x = _joystick.Horizontal;
-        movement.y = _joystick.Vertical;
+       // movement.x = _joystick.Horizontal;    //hapus // untuk menge enable joystick
+        // movement.y = _joystick.Vertical;
     }
 
     //Fungsi untuk memberikan animasi pada player

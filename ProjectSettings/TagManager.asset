@@ -7,6 +7,7 @@ TagManager:
   - Poster
   - Coin
   - CoinRed
+  - Music
   layers:
   - Default
   - TransparentFX
@@ -47,6 +48,12 @@ TagManager:
   - name: room
     uniqueID: 2195140655
     locked: 0
+  - name: room front
+    uniqueID: 2991832093
+    locked: 0
+  - name: objects at the back of player3
+    uniqueID: 2841843003
+    locked: 0
   - name: objects at the back of player2
     uniqueID: 4194246301
     locked: 0
@@ -56,6 +63,9 @@ TagManager:
   - name: NPC
     uniqueID: 4104137605
     locked: 0
+  - name: coin
+    uniqueID: 2976855027
+    locked: 0
   - name: player
     uniqueID: 2483847155
     locked: 0
@@ -64,9 +74,6 @@ TagManager:
     locked: 0
   - name: objects at the front of player 2
     uniqueID: 2389418393
-    locked: 0
-  - name: coin
-    uniqueID: 2976855027
     locked: 0
   - name: Dialogue Text Box
     uniqueID: 3395923429

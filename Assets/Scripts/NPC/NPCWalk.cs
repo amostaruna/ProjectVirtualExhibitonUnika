@@ -27,7 +27,6 @@ public class NPCWalk : MonoBehaviour
     {
         speed = (transform.position - lastPosition).magnitude;
         lastPosition = transform.position;
-        Debug.Log("Speed = " + speed);
         if (right && !stop) 
         {
             animator.SetFloat("Horizontal", 1);
