@@ -64,44 +64,11 @@ public class PlayerMovement : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Lobby")
         {
             transform.position = new Vector2(
-                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", 113f),
-                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", 46f));
-        }
-        else if (SceneManager.GetActiveScene().name == "Main Room")
-        {
-            transform.position = new Vector2(
-                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", -3f),
-                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", -5f));
-        }
-        else if (SceneManager.GetActiveScene().name == "Parametrik Room")
-        {
-            transform.position = new Vector2(
-                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", 0.2f),
-                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", -4f));
-        }
-        else if (SceneManager.GetActiveScene().name == "Week'n Room")
-        {
-            transform.position = new Vector2(
-                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", -25.2f),
-                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", 2.9f));
-        }
-        else if (SceneManager.GetActiveScene().name == "Hall of Fame Room")
-        {
-            transform.position = new Vector2(
-                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", -1f),
-                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", -1f));
-        }
-        else if (SceneManager.GetActiveScene().name == "AAE Room")
-        {
-            transform.position = new Vector2(
-                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", 1.14f),
-                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", 1.14f));
-        }
-        else if (SceneManager.GetActiveScene().name == "Seminar Room")
-        {
-            transform.position = new Vector2(
-                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", 1.14f),
-                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", 1.14f));
+                //PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", -23f),
+                //PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", 2f));
+                //debug
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", 114f),
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", 45f));
         }
     }
 

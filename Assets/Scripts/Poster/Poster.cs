@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +24,16 @@ public class Poster : MonoBehaviour
     //CekPoster digunakan untuk mengecek apakah Poster sudah tampil apa belum
     bool cekPoster;
 
+    //game objek,*khusus video seminar*
+    [Header("Khusus Video Seminar")]
+    [SerializeField] private GameObject NoMainChar;
+    [SerializeField] private GameObject MainChar1;
+    [SerializeField] private GameObject MainChar2;
+    [SerializeField] private GameObject MainChar3;
+    [SerializeField] private GameObject MainChar4;
+    [SerializeField] public GameObject SeminarAAE;
+    [SerializeField] public GameObject SeminarBOS;
+    [SerializeField] public GameObject PleaseSitSign;
     private void Awake()
     {
         if(posterFull == null)
@@ -46,6 +58,12 @@ public class Poster : MonoBehaviour
         {
             btnInteract.SetActive(false);
         }
+
+        //OBJEK KHUSUS VIDEO SEMINAR
+        SeminarAAE.SetActive(false);
+        SeminarBOS.SetActive(false);
+        //SeminarAAE= GameObject.Find("SeminarBOS_Panel");
+       //SeminarBOS = GameObject.Find("SeminarBOS_Panel");
     }
 
     private void Update()
@@ -99,6 +117,72 @@ public class Poster : MonoBehaviour
         cekPoster = true;
         posterFull.SetActive(true);
         anim.SetBool("FadeIn", true);
+        
+        //khusus video seminar
+        if(this.name==("SeminarBOS_Panel"))
+        {
+            NoMainChar.SetActive(false);
+            if (Data.CharNum == 1)
+            {
+                MainChar1.SetActive(true);
+                MainChar2.SetActive(false);
+                MainChar3.SetActive(false);
+                MainChar4.SetActive(false);
+            }
+            else if (Data.CharNum == 2)
+            {
+                MainChar1.SetActive(false);
+                MainChar2.SetActive(true);
+                MainChar3.SetActive(false);
+                MainChar4.SetActive(false);
+            }
+            else if (Data.CharNum == 3)
+            {
+                MainChar1.SetActive(false);
+                MainChar2.SetActive(false);
+                MainChar3.SetActive(true);
+                MainChar4.SetActive(false);
+            }
+            else if (Data.CharNum == 4)
+            {
+                MainChar1.SetActive(false);
+                MainChar2.SetActive(false);
+                MainChar3.SetActive(false);
+                MainChar4.SetActive(true);
+            }
+        }
+        else if (this.name == ("SeminarAAE_Panel "))
+        {
+            NoMainChar.SetActive(false);
+            if (Data.CharNum == 1)
+            {
+                MainChar1.SetActive(true);
+                MainChar2.SetActive(false);
+                MainChar3.SetActive(false);
+                MainChar4.SetActive(false);
+            }
+            else if (Data.CharNum == 2)
+            {
+                MainChar1.SetActive(false);
+                MainChar2.SetActive(true);
+                MainChar3.SetActive(false);
+                MainChar4.SetActive(false);
+            }
+            else if (Data.CharNum == 3)
+            {
+                MainChar1.SetActive(false);
+                MainChar2.SetActive(false);
+                MainChar3.SetActive(true);
+                MainChar4.SetActive(false);
+            }
+            else if (Data.CharNum == 4)
+            {
+                MainChar1.SetActive(false);
+                MainChar2.SetActive(false);
+                MainChar3.SetActive(false);
+                MainChar4.SetActive(true);
+            }
+        }
     }
 
     //fungsi untuk menutup poster
@@ -139,6 +223,71 @@ public class Poster : MonoBehaviour
     {
         print("Close Poster");
         StartCoroutine(AnimHiddenPoster());
+        //khusus video seminar
+        if (this.name == ("SeminarBOS_Panel"))
+        {
+            NoMainChar.SetActive(true);
+            if (Data.CharNum == 1)
+            {
+                MainChar1.SetActive(false);
+                MainChar2.SetActive(false);
+                MainChar3.SetActive(false);
+                MainChar4.SetActive(false);
+            }
+            else if (Data.CharNum == 2)
+            {
+                MainChar1.SetActive(false);
+                MainChar2.SetActive(false);
+                MainChar3.SetActive(false);
+                MainChar4.SetActive(false);
+            }
+            else if (Data.CharNum == 3)
+            {
+                MainChar1.SetActive(false);
+                MainChar2.SetActive(false);
+                MainChar3.SetActive(false);
+                MainChar4.SetActive(false);
+            }
+            else if (Data.CharNum == 4)
+            {
+                MainChar1.SetActive(false);
+                MainChar2.SetActive(false);
+                MainChar3.SetActive(false);
+                MainChar4.SetActive(false);
+            }
+        }
+        else if (this.name == ("SeminarAAE_Panel "))
+        {
+            NoMainChar.SetActive(true);
+            if (Data.CharNum == 1)
+            {
+                MainChar1.SetActive(false);
+                MainChar2.SetActive(false);
+                MainChar3.SetActive(false);
+                MainChar4.SetActive(false);
+            }
+            else if (Data.CharNum == 2)
+            {
+                MainChar1.SetActive(false);
+                MainChar2.SetActive(false);
+                MainChar3.SetActive(false);
+                MainChar4.SetActive(false);
+            }
+            else if (Data.CharNum == 3)
+            {
+                MainChar1.SetActive(false);
+                MainChar2.SetActive(false);
+                MainChar3.SetActive(false);
+                MainChar4.SetActive(false);
+            }
+            else if (Data.CharNum == 4)
+            {
+                MainChar1.SetActive(false);
+                MainChar2.SetActive(false);
+                MainChar3.SetActive(false);
+                MainChar4.SetActive(false);
+            }
+        }
     }
 
     public void ShowCoin()
@@ -156,5 +305,17 @@ public class Poster : MonoBehaviour
             PlayerPrefs.SetInt("GetCoin", 1);
             ShowPoster();
         }
+    }
+
+    //khusus video seminar
+    public void VideoIsSeminarBOS()
+    {
+        SeminarBOS.SetActive(true);
+        SeminarAAE.SetActive(false);
+    }
+    public void VideoIsSeminarAAE()
+    {
+        SeminarBOS.SetActive(false);
+        SeminarAAE.SetActive(true);
     }
 }

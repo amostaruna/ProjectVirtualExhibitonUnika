@@ -45,6 +45,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: room back
+    uniqueID: 2537162303
+    locked: 0
   - name: room
     uniqueID: 2195140655
     locked: 0
