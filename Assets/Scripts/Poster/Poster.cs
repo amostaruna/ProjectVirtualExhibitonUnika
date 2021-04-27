@@ -77,11 +77,6 @@ public class Poster : MonoBehaviour
         {
             StartCoroutine(AnimHiddenPoster());
         }
-
-        if (Input.GetKey(KeyCode.C))
-        {
-            PlayerPrefs.DeleteAll();
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -91,7 +86,7 @@ public class Poster : MonoBehaviour
         {
             //Muncul Pop Up Button 
             ShowText();
-            btnInteract.SetActive(true);
+           // btnInteract.SetActive(true);
             cekButton = true;
         }
     }
@@ -315,5 +310,10 @@ public class Poster : MonoBehaviour
     {
         SeminarBOS.SetActive(false);
         SeminarAAE.SetActive(true);
+    }
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }
