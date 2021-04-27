@@ -67,8 +67,8 @@ public class PlayerMovement : MonoBehaviour
                 //PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", -23f),
                 //PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", 2f));
                 //debug
-                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", 114f),
-                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", 45f));
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "X", -20f),
+                PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Y", -3f));
         }
     }
 

@@ -62,8 +62,6 @@ public class Poster : MonoBehaviour
         //OBJEK KHUSUS VIDEO SEMINAR
         SeminarAAE.SetActive(false);
         SeminarBOS.SetActive(false);
-        //SeminarAAE= GameObject.Find("SeminarBOS_Panel");
-       //SeminarBOS = GameObject.Find("SeminarBOS_Panel");
     }
 
     private void Update()

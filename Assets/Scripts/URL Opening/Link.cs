@@ -71,7 +71,7 @@ public class Link : MonoBehaviour
 	public void OpenLinkSayembaraHallOfFameRoom()
 	{
 #if (!UNITY_EDITOR)
-		openWindow("https://youtu.be/AUgPacVTWhY");
+		openWindow("https://www.behance.net/gallery/118359725/BEST-OF-STUDIO-2021-SAYEMBARA-DESAIN-MICRO-HOUSING");
 #endif
 	}
 	public void OpenLinkSPA1HallOfFameRoom()
@@ -111,6 +111,14 @@ public class Link : MonoBehaviour
 #endif
 	}
 	public void OpenLinkSPA7HallOfFameRoom()
+	{
+#if (!UNITY_EDITOR)
+		openWindow("https://www.behance.net/gallery/114642637/BEST-OF-SYUDIO-2021-SEMESTER-7");
+#endif
+	}
+
+	//Feedback Link
+	public void OpenLinkFeedback()
 	{
 #if (!UNITY_EDITOR)
 		openWindow("https://www.behance.net/gallery/114642637/BEST-OF-SYUDIO-2021-SEMESTER-7");
