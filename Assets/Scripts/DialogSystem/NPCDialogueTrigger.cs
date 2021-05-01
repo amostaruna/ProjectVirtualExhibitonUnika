@@ -22,6 +22,9 @@ public class NPCDialogueTrigger : MonoBehaviour
 
     private float timer = 0;
     private bool emoticonShow;
+    
+    //Btn Interact For Android
+    [SerializeField] private GameObject interact;
 
     private void Awake()
     {
@@ -41,6 +44,7 @@ public class NPCDialogueTrigger : MonoBehaviour
         HideDialogueBox();
         
         btnInteract.SetActive(false);
+        interact.SetActive(false);
     }
 
     private void Update()
@@ -83,7 +87,7 @@ public class NPCDialogueTrigger : MonoBehaviour
 
     private void ShowNotification() //mengaktifkan notifikasi
     {
-        notificationText.enabled = true;
+      //  notificationText.enabled = true;
     }
 
     private void HideDialogueBox() //menyembunyikan dialoguebox
@@ -111,6 +115,7 @@ public class NPCDialogueTrigger : MonoBehaviour
             emoticon.SetActive(true);
             
             btnInteract.SetActive(true);
+            interact.SetActive(true);
         }
     }
 
@@ -123,6 +128,7 @@ public class NPCDialogueTrigger : MonoBehaviour
             buttonCheck = false;
             HideNotification();
             btnInteract.SetActive(false);
+            interact.SetActive(false);
         }
     }
 

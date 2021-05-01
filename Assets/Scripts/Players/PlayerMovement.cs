@@ -87,11 +87,11 @@ public class PlayerMovement : MonoBehaviour
     //Fungsi untuk Input Player
     private void InputMovement()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        //movement.x = Input.GetAxisRaw("Horizontal");
+        //movement.y = Input.GetAxisRaw("Vertical");
         
-       // movement.x = _joystick.Horizontal;    //hapus // untuk menge enable joystick
-        // movement.y = _joystick.Vertical;
+        movement.x = _joystick.Horizontal;    //hapus // untuk menge enable joystick
+         movement.y = _joystick.Vertical;
     }
 
     //Fungsi untuk memberikan animasi pada player

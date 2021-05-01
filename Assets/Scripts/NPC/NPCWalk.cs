@@ -17,11 +17,6 @@ public class NPCWalk : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    void FixedUpdate()
-    {
-
-    }
-
     // Update is called once per frame
     private void Update()
     {

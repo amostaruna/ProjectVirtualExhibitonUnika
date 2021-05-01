@@ -88,7 +88,7 @@ public class Poster : MonoBehaviour
         {
             //Muncul Pop Up Button 
             ShowText();
-           // btnInteract.SetActive(true);
+            btnInteract.SetActive(true);
             cekButton = true;
         }
     }
@@ -195,7 +195,7 @@ public class Poster : MonoBehaviour
     //Fungsi untuk mengaktifkan component Text("Open Poster")
     private void ShowText()
     {
-        textButton.enabled = true;
+     //   textButton.enabled = true;
     }
 
 
