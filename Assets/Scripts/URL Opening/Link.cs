@@ -6,148 +6,165 @@ public class Link : MonoBehaviour
 	//Parametrik Room
 	public void OpenLinkPoster1ParametricRoom()
 	{
-#if (!UNITY_EDITOR)
-		openWindow("https://ths.li/MHwzbA");
-#endif
+		Application.OpenURL("https://ths.li/MHwzbA");
+//#if (!UNITY_EDITOR)
+		//openWindow("https://ths.li/MHwzbA");
+//#endif
 	}
 
 	public void OpenLinkPoster2ParametricRoom()
 	{
-#if (!UNITY_EDITOR)
+		Application.OpenURL("https://ths.li/yQMaUo");
+/*#if (!UNITY_EDITOR)
 		openWindow("https://ths.li/yQMaUo");
-#endif
+#endif*/
 	}
 
 	public void OpenLinkPoster3ParametricRoom()
 	{
-#if (!UNITY_EDITOR)
+		Application.OpenURL("https://ths.li/I8X0k1");
+/*#if (!UNITY_EDITOR)
 		openWindow("https://ths.li/I8X0k1");
-#endif
+#endif*/
 	}
 
 	public void OpenLinkPoster4ParametricRoom()
 	{
-#if (!UNITY_EDITOR)
+		Application.OpenURL("https://ths.li/3IsODj");
+/*#if (!UNITY_EDITOR)
 		openWindow("https://ths.li/3IsODj");
-#endif
+#endif*/
 	}
 
 	//Week'n Room
 	public void OpenLinkItemWeekNRoom()
 	{
-#if (!UNITY_EDITOR)
+		Application.OpenURL("https://www.instagram.com/weekn_/");
+/*#if (!UNITY_EDITOR)
 		openWindow("https://www.instagram.com/weekn_/");
-#endif
+#endif*/
 	}
 
 	//AAE Room
 	public void OpenLinkDokumentasiAAERoom()
 	{
-#if (!UNITY_EDITOR)
+		Application.OpenURL("https://ths.li/YKFPjj");
+/*#if (!UNITY_EDITOR)
 		openWindow("https://ths.li/YKFPjj");
-#endif
+#endif*/
 	}
 	//seminar Room
 	public void OpenLinkSeminarBOSRoom()
 	{
-#if (!UNITY_EDITOR)
+		Application.OpenURL("https://youtu.be/GvxbjcJJMSQ");
+/*#if (!UNITY_EDITOR)
 		openWindow("https://youtu.be/GvxbjcJJMSQ");
-#endif
+#endif*/
 	}
 	public void OpenLinkSeminarAAERoom()
 	{
-#if (!UNITY_EDITOR)
+		Application.OpenURL("https://youtu.be/AUgPacVTWhY");
+/*#if (!UNITY_EDITOR)
 		openWindow("https://youtu.be/AUgPacVTWhY");
-#endif
+#endif*/
 	}
 
 	//Hall of Fame
 	public void OpenLinkEEHallOfFameRoom()
 	{
-#if (!UNITY_EDITOR)
+		Application.OpenURL("https://www.behance.net/gallery/114642729/EXTERNAL-EXAMINATION-77-78");
+/*#if (!UNITY_EDITOR)
 		openWindow("https://www.behance.net/gallery/114642729/EXTERNAL-EXAMINATION-77-78");
-#endif
+#endif*/
 	}
 	public void OpenLinkSayembaraHallOfFameRoom()
 	{
-#if (!UNITY_EDITOR)
+		Application.OpenURL("https://www.behance.net/gallery/118359725/BEST-OF-STUDIO-2021-SAYEMBARA-DESAIN-MICRO-HOUSING");
+/*#if (!UNITY_EDITOR)
 		openWindow("https://www.behance.net/gallery/118359725/BEST-OF-STUDIO-2021-SAYEMBARA-DESAIN-MICRO-HOUSING");
-#endif
+#endif*/
 	}
 	public void OpenLinkSPA1HallOfFameRoom()
 	{
-#if (!UNITY_EDITOR)
+		Application.OpenURL("https://www.behance.net/gallery/114641205/BEST-OF-STUDIO-2021-SEMESTER-1");
+/*#if (!UNITY_EDITOR)
 		openWindow("https://www.behance.net/gallery/114641205/BEST-OF-STUDIO-2021-SEMESTER-1");
-#endif
+#endif*/
 	}
 	public void OpenLinkSPA2HallOfFameRoom()
 	{
-#if (!UNITY_EDITOR)
+		Application.OpenURL("https://www.behance.net/gallery/114641357/BEST-OF-STUDIO-2021-SEMESTER-2");
+/*#if (!UNITY_EDITOR)
 		openWindow("https://www.behance.net/gallery/114641357/BEST-OF-STUDIO-2021-SEMESTER-2");
-#endif
+#endif*/
 	}
 	public void OpenLinkSPA3HallOfFameRoom()
 	{
-#if (!UNITY_EDITOR)
+		Application.OpenURL("https://www.behance.net/gallery/114641637/BEST-OF-STUDO-2021-SEMESTER-3");
+/*#if (!UNITY_EDITOR)
 		openWindow("https://www.behance.net/gallery/114641637/BEST-OF-STUDO-2021-SEMESTER-3");
-#endif
+#endif*/
 	}
 	public void OpenLinkSPA4HallOfFameRoom()
 	{
-#if (!UNITY_EDITOR)
+		Application.OpenURL("https://www.behance.net/gallery/114641709/BEST-OF-STUDO-2021-SEMESTER-4");
+/*#if (!UNITY_EDITOR)
 		openWindow("https://www.behance.net/gallery/114641709/BEST-OF-STUDO-2021-SEMESTER-4");
-#endif
+#endif*/
 	}
 	public void OpenLinkSPA5HallOfFameRoom()
 	{
-#if (!UNITY_EDITOR)
+		Application.OpenURL("https://www.behance.net/gallery/114641967/BEST-OF-STUDIO-2021-SEMESTER-5");
+/*#if (!UNITY_EDITOR)
 		openWindow("https://www.behance.net/gallery/114641967/BEST-OF-STUDIO-2021-SEMESTER-5");
-#endif
+#endif*/
 	}
 	public void OpenLinkSPA6HallOfFameRoom()
 	{
-#if (!UNITY_EDITOR)
+		Application.OpenURL("https://www.behance.net/gallery/114642209/BEST-OF-STUDIO-2021-SEMESTER-6");
+/*#if (!UNITY_EDITOR)
 		openWindow("https://www.behance.net/gallery/114642209/BEST-OF-STUDIO-2021-SEMESTER-6");
-#endif
+#endif*/
 	}
 	public void OpenLinkSPA7HallOfFameRoom()
 	{
-#if (!UNITY_EDITOR)
+		Application.OpenURL("https://www.behance.net/gallery/114642637/BEST-OF-SYUDIO-2021-SEMESTER-7");
+/*#if (!UNITY_EDITOR)
 		openWindow("https://www.behance.net/gallery/114642637/BEST-OF-SYUDIO-2021-SEMESTER-7");
-#endif
+#endif*/
 	}
 
 	//Feedback Link
 	public void OpenLinkFeedback()
 	{
-#if (!UNITY_EDITOR)
+/*#if (!UNITY_EDITOR)
 		openWindow("https://www.behance.net/gallery/114642637/BEST-OF-SYUDIO-2021-SEMESTER-7");
-#endif
+#endif*/
 	}
 
 	//instagram link
 	public void OpenIGHimaUnika()
 	{
-#if (!UNITY_EDITOR)
+		Application.OpenURL("https://www.instagram.com/hima_unikasoegija/?hl=id");
+/*#if (!UNITY_EDITOR)
 		openWindow("https://www.instagram.com/hima_unikasoegija/?hl=id");
-#endif
+#endif*/
 	}
 	public void OpenIGBOS()
 	{
-#if (!UNITY_EDITOR)
+		Application.OpenURL("https://www.instagram.com/bestofstudio.2021/?hl=id");
+/*#if (!UNITY_EDITOR)
 		openWindow("https://www.instagram.com/bestofstudio.2021/?hl=id");
-#endif
+#endif*/
 	}
 	public void OpenIGAAE()
 	{
-#if (!UNITY_EDITOR)
+		Application.OpenURL("https://www.instagram.com/aae.2021_/?hl=id");
+/*#if (!UNITY_EDITOR)
 		openWindow("https://www.instagram.com/aae.2021_/?hl=id");
-#endif
+#endif*/
 	}
-	[DllImport("__Internal")]
-	private static extern void openWindow(string url);
-
-
-
+	//[DllImport("__Internal")]
+	//private static extern void openWindow(string url);
 }
 

@@ -22,6 +22,7 @@ public class LoadSceneScript : MonoBehaviour
     public void QuitButton()
     {
         SceneManager.LoadScene("YouWinScene");
+        Data.CharNum = 0;
     }
     public void MainMenuButton()
     {
