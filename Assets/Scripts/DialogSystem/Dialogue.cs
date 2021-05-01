@@ -6,6 +6,6 @@ using UnityEngine;
 public class Dialogue
 {
     public string name;
-    [TextArea(3,10)]    //jumlah kalimat(minimal,maksimal)
+    [TextArea(2,10)]    //jumlah kalimat(minimal,maksimal)
     public string[] sentences;
 }

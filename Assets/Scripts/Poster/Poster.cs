@@ -34,6 +34,8 @@ public class Poster : MonoBehaviour
     [SerializeField] public GameObject SeminarAAE;
     [SerializeField] public GameObject SeminarBOS;
     [SerializeField] public GameObject PleaseSitSign;
+    [SerializeField] public GameObject Player;
+    [SerializeField] public GameObject PlayerSitCam;
     private void Awake()
     {
         if(posterFull == null)
@@ -114,6 +116,8 @@ public class Poster : MonoBehaviour
         //khusus video seminar
         if(this.name==("SeminarBOS_Panel"))
         {
+            Player.SetActive(false);
+            PlayerSitCam.SetActive(true);
             NoMainChar.SetActive(false);
             if (Data.CharNum == 1)
             {
@@ -146,6 +150,8 @@ public class Poster : MonoBehaviour
         }
         else if (this.name == ("SeminarAAE_Panel "))
         {
+            Player.SetActive(false);
+            PlayerSitCam.SetActive(true);
             NoMainChar.SetActive(false);
             if (Data.CharNum == 1)
             {
@@ -220,6 +226,9 @@ public class Poster : MonoBehaviour
         if (this.name == ("SeminarBOS_Panel"))
         {
             NoMainChar.SetActive(true);
+            PleaseSitSign.SetActive(false);
+            Player.SetActive(true);
+            PlayerSitCam.SetActive(false);
             if (Data.CharNum == 1)
             {
                 MainChar1.SetActive(false);
@@ -252,6 +261,9 @@ public class Poster : MonoBehaviour
         else if (this.name == ("SeminarAAE_Panel "))
         {
             NoMainChar.SetActive(true);
+            PleaseSitSign.SetActive(false);
+            Player.SetActive(true);
+            PlayerSitCam.SetActive(false);
             if (Data.CharNum == 1)
             {
                 MainChar1.SetActive(false);
@@ -303,11 +315,13 @@ public class Poster : MonoBehaviour
     //khusus video seminar
     public void VideoIsSeminarBOS()
     {
+        PleaseSitSign.SetActive(true);
         SeminarBOS.SetActive(true);
         SeminarAAE.SetActive(false);
     }
     public void VideoIsSeminarAAE()
     {
+        PleaseSitSign.SetActive(true);
         SeminarBOS.SetActive(false);
         SeminarAAE.SetActive(true);
     }

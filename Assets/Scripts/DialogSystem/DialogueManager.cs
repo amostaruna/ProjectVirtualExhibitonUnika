@@ -26,7 +26,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue (Dialogue dialogue)
     {
         NPCDT.dialogueOpenedCheck = true;
-        animator.SetBool("isOpen", true);   //animasi munculnya dialogbox
+        //animator.SetBool("isOpen", true);   //animasi munculnya dialogbox
         nameText.text = dialogue.name;      //assign nama NPC dari class Dialogue
         Debug.Log("starting conversation with " + dialogue.name);
         sentences.Clear();  //mengosongkan tampilan kalimat di dialogbox
@@ -68,8 +68,8 @@ public class DialogueManager : MonoBehaviour
     }
     IEnumerator dialogueCloseAnim()
     {
-        animator.SetBool("isOpen", false);
-        yield return new WaitForSeconds(1);
+        //animator.SetBool("isOpen", false);
+        yield return new WaitForSeconds(0.5f);
         NPCDT.dialogueBox.SetActive(false);
     }
 }

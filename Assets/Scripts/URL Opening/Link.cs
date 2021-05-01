@@ -44,7 +44,7 @@ public class Link : MonoBehaviour
 	public void OpenLinkDokumentasiAAERoom()
 	{
 #if (!UNITY_EDITOR)
-		openWindow("https://drive.google.com/drive/folders/1IPcP2XwKoZie-Yh0f9131YbAED5_4JzH?usp=sharing");
+		openWindow("https://ths.li/YKFPjj");
 #endif
 	}
 	//seminar Room
@@ -124,8 +124,30 @@ public class Link : MonoBehaviour
 		openWindow("https://www.behance.net/gallery/114642637/BEST-OF-SYUDIO-2021-SEMESTER-7");
 #endif
 	}
+
+	//instagram link
+	public void OpenIGHimaUnika()
+	{
+#if (!UNITY_EDITOR)
+		openWindow("https://www.instagram.com/hima_unikasoegija/?hl=id");
+#endif
+	}
+	public void OpenIGBOS()
+	{
+#if (!UNITY_EDITOR)
+		openWindow("https://www.instagram.com/bestofstudio.2021/?hl=id");
+#endif
+	}
+	public void OpenIGAAE()
+	{
+#if (!UNITY_EDITOR)
+		openWindow("https://www.instagram.com/aae.2021_/?hl=id");
+#endif
+	}
 	[DllImport("__Internal")]
 	private static extern void openWindow(string url);
+
+
 
 }
 

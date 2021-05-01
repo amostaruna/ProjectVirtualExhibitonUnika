@@ -15,9 +15,16 @@ public class LoadSceneScript : MonoBehaviour
     {
         SceneManager.LoadScene("Lobby");
     }
+    public void PlayButton()
+    {
+        SceneManager.LoadScene("Deskripsi");
+    }
     public void QuitButton()
     {
         SceneManager.LoadScene("YouWinScene");
     }
-
+    public void MainMenuButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
